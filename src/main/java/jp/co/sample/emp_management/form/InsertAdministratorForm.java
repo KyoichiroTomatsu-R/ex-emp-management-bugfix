@@ -10,13 +10,13 @@ import javax.validation.constraints.NotBlank;
  */
 public class InsertAdministratorForm {
 	/** 名前 */
-	@NotBlank
+	@NotBlank(message="入力してください")
 	private String name;
 	/** メールアドレス */
-	@NotBlank
+	@NotBlank(message="入力してください")
 	private String mailAddress;
 	/** パスワード */
-	@NotBlank
+	@NotBlank(message="入力してください")
 	private String password;
 
 	/**
