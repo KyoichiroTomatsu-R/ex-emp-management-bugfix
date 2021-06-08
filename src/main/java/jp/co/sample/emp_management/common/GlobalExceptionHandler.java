@@ -11,11 +11,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 import jp.co.sample.emp_management.common.GlobalExceptionHandler;
 
+/**
+ * アプリケーション内部で処理されなかった例外をここでキャッチしエラーページへ遷移させます.
+ * 
+ * @author kyoichiro.tomatsu
+ *
+ */
 @Component
 public class GlobalExceptionHandler implements HandlerExceptionResolver{
 	private static final Logger LOGGER
 	= LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
+	
 	@Override
 	public ModelAndView resolveException(
 			HttpServletRequest request, 
