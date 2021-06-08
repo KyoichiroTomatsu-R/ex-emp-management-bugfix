@@ -32,6 +32,7 @@ public class AdministratorController {
 	@Autowired
 	private HttpSession session;
 
+	
 	/**
 	 * 使用するフォームオブジェクトをリクエストスコープに格納する.
 	 * 
@@ -82,7 +83,12 @@ public class AdministratorController {
 		Administrator administrator = new Administrator();
 		// フォームからドメインにプロパティ値をコピー
 		BeanUtils.copyProperties(form, administrator);
-		administratorService.insert(administrator);
+		try {
+			administratorService.insert(administrator);			
+		} catch (Exception e) {
+			result.rejectValue("mailAddress", null, "emailアドレスが重複しています" );
+			return toInsert();
+		}
 		return "redirect:/login";
 	}
 
