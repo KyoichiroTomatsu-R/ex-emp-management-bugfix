@@ -15,6 +15,8 @@ public class Administrator {
 	private String mailAddress;
 	/** パスワード */
 	private String password;
+	/** 確認用パスワード */
+	private String passwordConfirm;
 
 	/**
 	 * 引数無しのコンストラクタ.
@@ -95,6 +97,15 @@ public class Administrator {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+
+	public String getPasswordConfirm() {
+		return passwordConfirm;
+	}
+
+	public void setPasswordConfirm(String passwordConfirm) {
+		this.passwordConfirm = passwordConfirm;
 	}
 
 	@Override
