@@ -1,5 +1,6 @@
 package jp.co.sample.emp_management.form;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 /**
@@ -13,6 +14,7 @@ public class UpdateEmployeeForm {
 	private String id;
 	/** 扶養人数 */
 	@Pattern(regexp = "^[0-9]+$", message = "扶養人数は数値で入力してください")
+	@NotBlank(message="入力してください")
 	private String dependentsCount;
 
 	/**
