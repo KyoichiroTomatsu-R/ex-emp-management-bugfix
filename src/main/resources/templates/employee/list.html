@@ -58,9 +58,10 @@
 		<!-- table -->
 		
 		<div class="searchForm">
-			<form action="@{/employee/search}" method="post">
+			<form th:action="@{/employee/search}" method="post">
 				検索
-				<input name="searchName"><br>
+				<input name="searchWord"><span th:text="${notFound}"></span><br>
+				<button>検索</button>
 			</form>
 		</div>
 		
