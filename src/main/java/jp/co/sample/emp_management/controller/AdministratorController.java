@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -32,6 +33,9 @@ public class AdministratorController {
 	
 	@Autowired
 	private HttpSession session;
+	
+	@Autowired
+	PasswordEncoder passwordEncoder;
 
 	
 	/**
@@ -122,6 +126,7 @@ public class AdministratorController {
 	 */
 	@RequestMapping("/login")
 	public String login(LoginForm form, BindingResult result, Model model) {
+		
 		Administrator administrator = administratorService.login(form.getMailAddress(), form.getPassword());
 		if (administrator == null) {
 			model.addAttribute("errorMessage", "メールアドレスまたはパスワードが不正です。");
