@@ -56,6 +56,18 @@
 		</ol>
 
 		<!-- table -->
+		
+		<div class="searchForm">
+			<form th:action="@{/employee/search}" method="post">
+				検索
+				<input name="searchWord"><span th:text="${notFound}"></span><br>
+				<button>検索</button>
+			</form>
+		</div>
+		
+		
+		
+		
 		<div class="row">
 			<div
 				class="table-responsive col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
@@ -63,6 +75,8 @@
 <!-- ここから上を編集する必要はありません -->
 
 <!-- ここにモックのtable要素を貼り付けます -->
+
+
 
 				<table class="table table-striped">
 					<thead>
